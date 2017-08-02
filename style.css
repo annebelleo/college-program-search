@@ -1,0 +1,51 @@
+body {
+    margin: 0 auto;
+}
+
+.card {
+    border: 1px solid black;
+    padding: 20%;
+    margin: 10%;
+}
+#page-header{max-height:15%;
+    border-bottom:dashed black;
+}
+#header{
+    padding:1%;
+    overflow:hidden;
+}
+#header:before{
+    font-family: FontAwesome;
+    content: "\f1ba";
+    position:absolute;
+    left:-10%;
+    transition: all 200ms ease;
+ 
+}
+#header:hover:before{
+    left:30%;
+}
+#searchbar{position:absolute;
+    top:11%;
+    padding-top:1%;
+    
+    border-bottom:dashed black;
+    
+}
+#searchbutton{position:absolute;
+top:30%;
+left:70%;
+padding-left:10%;
+padding-right:10%;
+background-color:black;
+color:white;
+border:dashed white;
+    
+}
+
+#search_result{
+    position:absolute;
+    top:25%;
+}
+
+
