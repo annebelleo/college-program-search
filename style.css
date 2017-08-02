@@ -1,5 +1,6 @@
 body {
     margin: 0 auto;
+    background-color: #CBDBF2!important;
 }
 
 .card {
@@ -7,45 +8,107 @@ body {
     padding: 20%;
     margin: 10%;
 }
-#page-header{max-height:15%;
-    border-bottom:dashed black;
+.font{
+    font-family:"Courier New", Courier, monospace;
 }
-#header{
-    padding:1%;
-    overflow:hidden;
+
+#page-header {
+    max-height: 15%;
+    color:white;
+    border-bottom: dashed black;
+    background-image:url("http://www.frommers.com/system/header_images/images/000/000/005/original/Chicago_Skyline_at_night_by_Flickr_a4gpa.jpg?1386175956");
+    background-repeat: no-repeat;
+    background-position:center;
 }
-#header:before{
+
+#header {
+    font-weight:bold;
+    padding: 1%;
+    overflow: hidden;
+}
+
+#header:before {
     font-family: FontAwesome;
     content: "\f1ba";
-    position:absolute;
-    left:-10%;
+    position: absolute;
+    left: -10%;
     transition: all 200ms ease;
- 
-}
-#header:hover:before{
-    left:30%;
-}
-#searchbar{position:absolute;
-    top:11%;
-    padding-top:1%;
-    
-    border-bottom:dashed black;
-    
-}
-#searchbutton{position:absolute;
-top:30%;
-left:70%;
-padding-left:10%;
-padding-right:10%;
-background-color:black;
-color:white;
-border:dashed white;
-    
+
 }
 
-#search_result{
-    position:absolute;
-    top:25%;
+#header:hover:before {
+
+    left: 30%;
+}
+
+.header {
+    overflow: hidden;
+}
+
+.header:before {
+    right: 30%;
+}
+
+.header:hover:before {
+    font-family: FontAwesome;
+    content: "\f1ba";
+    position: absolute;
+    right: -10%;
+    transition: all 200ms ease;
+}
+
+#searchbar {
+    position: absolute;
+    top: 11%;
+    padding-top: 1%;
+
+    border-bottom: dashed black;
+
+}
+
+#searchbutton {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: black;
+    color: white;
+    border: dashed white;
+}
+
+#searchbutton:hover {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: white;
+    color: black;
+    border: dashed black;
 }
 
 
+#search_result {
+    position: absolute;
+    top: 25%;
+}
+
+#map {
+        height: 200px;
+        width: 50%;
+       }
+       
+.glow{
+	font-size:16px;
+	color:#FFF;
+      transition: all 0.3s ease-in;
+      text-decoration:none;
+}
+
+.glow:hover{
+	-webkit-stroke-width: 5.3px;
+      -webkit-stroke-color: #FFFFFF;
+      -webkit-fill-color: #FFFFFF;
+      text-shadow: 1px 0px 20px yellow;
+}
