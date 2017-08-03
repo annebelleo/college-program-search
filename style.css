@@ -3,11 +3,6 @@ body {
     background-color: #CBDBF2!important;
 }
 
-.card {
-    padding: 20%;
-    margin: 10%;
-}
-
 .font {
     font-family: "Courier New", Courier, monospace;
 }
@@ -157,4 +152,8 @@ h3 {
     /*margin-top: -8% !important;*/
     left: 45% !important;
 
+}
+
+.carousel{ 
+    top:150% !important;
 }

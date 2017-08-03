@@ -22,13 +22,15 @@ function college() {
 
         .then(function(json) {
 
-            if (clicked) {
-                console.log("hi")
-                document.getElementById("search_result").parentNode.removeChild(document.getElementById("search_result"))
-                // removeChild(document.getElementById("panel"));
-            }
+            // if (clicked) {
+            //     console.log("hi")
+            //     document.getElementById("search_result").parentNode.removeChild(document.getElementById("search_result"))
+            //     // removeChild(document.getElementById("panel"));
+            // }
             // next step - storing all of these in a for loop
             // creating the outside search result div
+            
+            for (var i = 0; i < json.results.length; i++){
             var resultCard = document.createElement("div");
             resultCard.setAttribute("id", "search_result");
             resultCard.setAttribute("class", "panel panel-default col-sm-8 col-sm-offset-2 container-fluid");
@@ -48,7 +50,7 @@ function college() {
 
             //website for the college
 
-            var webPath = json.results["0"].school.school_url;
+            var webPath = json.results[i].school.school_url;
             var websitePath = document.createElement("a")
             websitePath.setAttribute("id", "web")
             websitePath.setAttribute('href', `https://${webPath}`)
@@ -78,13 +80,13 @@ function college() {
             list.appendChild(items);
             resultCard.appendChild(mapDiv)
 
-            var namePath = json.results[0].school.name;
+            var namePath = json.results[i].school.name;
             var schoolName = document.getElementById("schoolName");
             schoolName.innerHTML = namePath;
             schoolName.setAttribute("class", "glow")
 
 
-            var cityPath = json.results["0"].school.city;
+            var cityPath = json.results[i].school.city;
             console.log(cityPath);
             var cityName = document.getElementById('city');
             cityName.innerHTML = cityPath;
@@ -92,6 +94,7 @@ function college() {
 
             document.getElementById("myForm").reset();
             clicked = true;
+            }
         })
 
         .catch(
