@@ -64,7 +64,7 @@ function college() {
 
             var mapDiv = document.createElement("div")
             mapDiv.setAttribute('id', "map")
-            mapDiv.setAttribute("class", "thumbnail")
+            mapDiv.setAttribute("class", "thumbnail grow")
 
 
             document.body.appendChild(resultCard);
