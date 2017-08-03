@@ -11,7 +11,8 @@ function college() {
     console.log("INPUT", userInput);
     // return userInput;
 
-    var endpoint = `https://api.data.gov/ed/collegescorecard/v1/schools?school.name=${userInput}&api_key=Fd0wPPnAZObFDAAV8HNSt92fbevLl9pFAf8kNZVx`
+    var endpoint = `https://api.data.gov/ed/collegescorecard/v1/schools.json?school.city=${userInput}&api_key=Fd0wPPnAZObFDAAV8HNSt92fbevLl9pFAf8kNZVx`
+
 
     fetch(endpoint)
         .then(
@@ -46,7 +47,7 @@ function college() {
             // map
 
             //website for the college
-            
+
             var webPath = json.results["0"].school.school_url;
             var websitePath = document.createElement("a")
             websitePath.setAttribute("id", "web")
@@ -88,7 +89,7 @@ function college() {
             var cityName = document.getElementById('city');
             cityName.innerHTML = cityPath;
             initMap()
-            
+
             document.getElementById("myForm").reset();
             clicked = true;
         })
@@ -100,13 +101,37 @@ function college() {
 }
 
 
+
+function test() {
+    // var endpoint = `https://api.data.gov/ed/collegescorecard/v1/schools.json?location.lat=41.318&location.lon=-72.92&api_key=Fd0wPPnAZObFDAAV8HNSt92fbevLl9pFAf8kNZVx`
+    var endpoint = `https://api.data.gov/ed/collegescorecard/v1/schools.json?school.city=${userInput}&api_key=Fd0wPPnAZObFDAAV8HNSt92fbevLl9pFAf8kNZVx`
+    console.log(endpoint)
+    fetch(endpoint)
+        .then(
+            function(data) {
+                return data.json()
+            })
+
+        .then(
+            function(json) {
+                console.log(json)
+
+            }
+        )
+
+        .catch(
+            err => {
+                console.log(err)
+            })
+}
+
+
+
 function initMap() {
     var userInput = document.getElementById('input').value;
     console.log("INPUT", userInput);
 
-    var endpoint = `https://api.data.gov/ed/collegescorecard/v1/schools?school.name=${userInput}&api_key=Fd0wPPnAZObFDAAV8HNSt92fbevLl9pFAf8kNZVx`
-
-
+    var endpoint = `https://api.data.gov/ed/collegescorecard/v1/schools.json?school.name=${userInput}&api_key=Fd0wPPnAZObFDAAV8HNSt92fbevLl9pFAf8kNZVx`;
 
     fetch(endpoint)
         .then(
