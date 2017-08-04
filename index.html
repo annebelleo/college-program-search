@@ -15,8 +15,6 @@
 
     <!--Google Maps API-->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpuhS-1SBpfjvocaLU1glAeGu6rUdYp9k&callback=initMap"></script>
-
-
 </head>
 
 <body>
@@ -28,68 +26,63 @@
     <div id="searchbar" class="col-sm-4 col-sm-offset-4">
         <form class="navbar-form" id="myForm" role="search">
             <div class="form-group">
-                <input id="input" type="text" class="form-control font " placeholder="Enter Location">
+                <input id="input" type="text" class="form-control font " placeholder="Enter City/Town">
             </div>
         </form>
 
         <button type="submit" onclick="college()" id="searchbutton" class="btn font">Find Schools</button>
-
         <div class="dropdown font">
             <button class="filterbtn" id="dLabel" type="button" data-toggle="dropdown" aria-expanded="false">Filter<span class="caret"></span>
            </button>
             <ul class="dropdown-menu font" aria-labelledby="dLabel">
-                <li><input type="checkbox" name="vehicle" value="Arts">Arts and Humanities</li>
-                <li><input type="checkbox" name="vehicle" value="Business">Business</li>
-                <li><input type="checkbox" name="vehicle" value="Health">Health and Medicine</li>
-                <li><input type="checkbox" name="vehicle" value="Multi">Multi-/Interdisciplinary</li>
-                <li><input type="checkbox" name="vehicle" value="SocialServices">Public and Social Services</li>
-                <li><input type="checkbox" name="vehicle" value="STEM">STEM</li>
-                <li><input type="checkbox" name="vehicle" value="SocialSciences">Social Sciences</li>
-                <li><input type="checkbox" name="vehicle" value="Trades">Trades and Personal Services</li>
+                <li><input id="arts" type="checkbox" name="vehicle" value="Arts">Arts and Humanities</li>
+                <li><input id="business" type="checkbox" name="vehicle" value="Business">Business</li>
+                <li><input id="health" type="checkbox" name="vehicle" value="Health">Health and Medicine</li>
+                <li><input id="multi" type="checkbox" name="vehicle" value="Multi">Multi-/Interdisciplinary</li>
+                <li><input id="socialservices" type="checkbox" name="vehicle" value="SocialServices">Public and Social Services</li>
+                <li><input id="stem" type="checkbox" name="vehicle" value="STEM">STEM</li>
+                <li><input id="socialsciences" type="checkbox" name="vehicle" value="SocialSciences">Social Sciences</li>
+                <li><input id="trades" type="checkbox" name="vehicle" value="Trades">Trades and Personal Services</li>
             </ul>
         </div>
     </div>
 
-    <!--<div class="container carousel">-->
-    <!--    <div id="myCarousel" class="carousel slide" data-ride="carousel">-->
-            <!-- Indicators -->
-    <!--        <ol class="carousel-indicators">-->
-    <!--            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
-    <!--            <li data-target="#myCarousel" data-slide-to="1"></li>-->
-    <!--            <li data-target="#myCarousel" data-slide-to="2"></li>-->
-    <!--        </ol>-->
+    <div class="container carousel" id="carouselthing">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-            <!-- Wrapper for slides -->
-    <!--        <div class="carousel-inner">-->
-    <!--            <div class="item active">-->
-    <!--                <img src="https://assets3.thrillist.com/v1/image/2561558/size/tmg-slideshow_l.jpg" alt="Frank 1" style="width:100%;">-->
-    <!--            </div>-->
-
-    <!--            <div class="item">-->
-    <!--                <img src="http://cdn.iflscience.com/images/4748c3fa-92dc-59d4-b1b2-f16d63a1ddf6/default-1464355116-624-desert-rain-frog-dangerous-beast-or-adorable-squeaky-toy.jpg" alt="Frank 2" style="width:100%;">-->
-    <!--            </div>-->
-
-    <!--            <div class="item">-->
-    <!--                <img src="http://vmus.adu.org.za/vm_img.php?fname=safap/001328-1.jpg&max_size=450%20alt=" alt="Francine" style="width:100%;">-->
-    <!--            </div>-->
-    <!--        </div>-->
-
-            <!-- Left and right controls -->
-    <!--        <a class="left carousel-control" href="#myCarousel" data-slide="prev">-->
-    <!--  <span class="glyphicon glyphicon-chevron-left"></span>-->
-    <!--  <span class="sr-only">Previous</span>-->
-    <!--</a>-->
-    <!--        <a class="right carousel-control" href="#myCarousel" data-slide="next">-->
-    <!--  <span class="glyphicon glyphicon-chevron-right"></span>-->
-    <!--  <span class="sr-only">Next</span>-->
-    <!--</a>-->
-    <!--    </div>-->
-    <!--</div>-->
-
-    <!--<div id="map"></div>-->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
 
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://assets3.thrillist.com/v1/image/2561558/size/tmg-slideshow_l.jpg" alt="Frank 1" style="width:100%;">
+                </div>
 
+                <div class="item">
+                    <img src="" alt="Frank 2" style="width:100%;">
+                </div>
+
+                <div class="item">
+                    <img src="" alt="Francine" style="width:100%;">
+                </div>
+            </div>
+
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+      
+    </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+        </div>
+    </div>
 </body>
 
 </html>
