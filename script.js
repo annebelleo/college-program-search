@@ -182,7 +182,7 @@ function college() {
                     console.log(strSplit)
                     var programList = document.createTextNode(resultsToString);
 
-                    if (strSplit[1] == 0) {
+                    if (strSplit[1] == "0") {
                         programList = document.createTextNode("No Data is Available");
                         items.innerHTML = programList
                     }
