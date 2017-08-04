@@ -71,18 +71,18 @@ function college() {
                     carousel2.appendChild(ol);
 
                     var dot1 = document.createElement("li");
-                    dot1.setAttribute("data-target", "#myCarousel");
+                    dot1.setAttribute("data-target", "#myCarousel" + i);
                     dot1.setAttribute("data-slide-to", "0");
                     dot1.setAttribute("class", "active");
                     ol.appendChild(dot1);
 
                     var dot2 = document.createElement("li");
-                    dot2.setAttribute("data-target", "#myCarousel");
+                    dot2.setAttribute("data-target", "#myCarousel" + i);
                     dot2.setAttribute("data-slide-to", "1");
                     ol.appendChild(dot2);
 
                     var dot3 = document.createElement("li");
-                    dot3.setAttribute("data-target", "#myCarousel");
+                    dot3.setAttribute("data-target", "#myCarousel" + i);
                     dot3.setAttribute("data-slide-to", "2");
                     ol.appendChild(dot3);
 
@@ -146,7 +146,7 @@ function college() {
                     //end Carousel
 
                     var mapDiv = document.createElement("div");
-                    mapDiv.setAttribute('id', "map" + i);
+                    mapDiv.setAttribute('id', "map");
                     mapDiv.setAttribute("class", "thumbnail grow map");
 
                     document.body.appendChild(resultCard);
