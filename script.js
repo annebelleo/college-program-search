@@ -146,7 +146,7 @@ function college() {
                     //end Carousel
 
                     var mapDiv = document.createElement("div");
-                    mapDiv.setAttribute('id', "map" );
+                    mapDiv.setAttribute('id', "map" + i);
                     mapDiv.setAttribute("class", "thumbnail grow map");
 
                     document.body.appendChild(resultCard);
