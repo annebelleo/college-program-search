@@ -62,7 +62,7 @@ function college() {
                     carousel.setAttribute("id", "carouselthing");
                     var carousel2 = document.createElement("div");
                     carousel2.setAttribute("class", "carousel slide");
-                    carousel2.setAttribute("id", "myCarousel");
+                    carousel2.setAttribute("id", "myCarousel" + i);
                     carousel2.setAttribute("data-ride", "carousel");
                     carousel.appendChild(carousel2);
 
@@ -121,7 +121,7 @@ function college() {
 
                     var leftcontrol = document.createElement("a");
                     leftcontrol.setAttribute("class", "left carousel-control");
-                    leftcontrol.setAttribute("href", "#myCarousel");
+                    leftcontrol.setAttribute("href", "#myCarousel" + i);
                     leftcontrol.setAttribute("data-slide", "prev");
                     carousel2.appendChild(leftcontrol);
                     var leftarrow = document.createElement("span");
@@ -133,7 +133,7 @@ function college() {
 
                     var rightcontrol = document.createElement("a");
                     rightcontrol.setAttribute("class", "right carousel-control");
-                    rightcontrol.setAttribute("href", "#myCarousel");
+                    rightcontrol.setAttribute("href", "#myCarousel" + i);
                     rightcontrol.setAttribute("data-slide", "next");
                     carousel2.appendChild(rightcontrol);
                     var rightarrow = document.createElement("span");

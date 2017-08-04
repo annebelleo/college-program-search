@@ -90,7 +90,17 @@ body {
     background-size:20%;
 }
 
+<<<<<<< HEAD
 
+=======
+#map {
+    top: 10px;
+    left: 50%;
+    height: 400px;
+    width: 50%;
+    margin-top:-10%;
+}
+>>>>>>> e9e1df94219bcffd8b2ecfdcbfc4243f4b084e22
 
 .map {
     margin-top: -10%;
@@ -136,7 +146,7 @@ h3 {
 .filterbtn {
     border-radius: 5%;
     position: absolute;
-    margin-top: -9% !important;
+    margin-top: -10% !important;
     margin-left: 2%;
     left: 44%;
     background-color: black;
