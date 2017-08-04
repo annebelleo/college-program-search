@@ -1,7 +1,6 @@
 var location;
 
 // filters: take college scorecard programs and list them under rachael's filters using https://bigfuture.collegeboard.org/majors-careers as a ref
-// state: figure out why the first result does not give a state
 
 function college() {
     var userInput = document.getElementById('input').value;
@@ -13,193 +12,216 @@ function college() {
             })
 
         .then(function(json) {
-            console.log(json);
-            for (var i = 0; i < json.results.length; i++) {
-                var resultCard = document.createElement("div");
-                resultCard.setAttribute("id", "search_result");
-                resultCard.setAttribute("class", "panel panel-default col-sm-8 col-sm-offset-2 container-fluid");
+                console.log(json);
+                for (var i = 0; i < json.results.length; i++) {
+                    var resultCard = document.createElement("div");
+                    resultCard.setAttribute("id", "search_result");
+                    resultCard.setAttribute("class", "panel panel-default col-sm-8 col-sm-offset-2 container-fluid");
 
-                // creating the child element of resultCard
-                var panelBody = document.createElement("div");
-                panelBody.setAttribute("class", "panel-body");
-                panelBody.setAttribute("id", "panel");
+                    // creating the child element of resultCard
+                    var panelBody = document.createElement("div");
+                    panelBody.setAttribute("class", "panel-body");
+                    panelBody.setAttribute("id", "panel");
 
-                // the school title name
-                var namePath = json.results[i].school.name;
-                var nameOfSchool = document.createElement("h3");
-                nameOfSchool.setAttribute("id", "schoolName");
-                nameOfSchool.setAttribute("class", "glow font");
-                nameOfSchool.innerHTML = namePath;
+                    // the school title name
+                    var namePath = json.results[i].school.name;
+                    var nameOfSchool = document.createElement("h3");
+                    nameOfSchool.setAttribute("id", "schoolName");
+                    nameOfSchool.setAttribute("class", "glow font");
+                    nameOfSchool.innerHTML = namePath;
 
-                // location
-                var cityPath = json.results[i].school.city;
-                var statePath = json.results[i].school.state;
-                
-                var schoolLocation = document.createElement("h4");
-                schoolLocation.setAttribute("id", "location");
-                schoolLocation.setAttribute("class", "state");
-                schoolLocation.innerHTML = `${cityPath}, ${statePath}`;
+                    // location
+                    var cityPath = json.results[i].school.city;
+                    var statePath = json.results[i].school.state;
 
-                //website for the college
-                var webPath = json.results[i].school.school_url;
-                var websitePath = document.createElement("a");
-                websitePath.setAttribute("id", "web");
-                websitePath.setAttribute('href', `https://${webPath}`);
-                websitePath.innerHTML = webPath;
+                    var schoolLocation = document.createElement("h4");
+                    schoolLocation.setAttribute("id", "location");
+                    schoolLocation.setAttribute("class", "state");
+                    schoolLocation.innerHTML = `${cityPath}, ${statePath}`;
 
-                // list (ul)
-                var list = document.createElement("ul");
-                list.setAttribute("id", "resultList");
-                // items (li)
-                var items = document.createElement("li");
-                items.setAttribute("class", "resultLi");
+                    //website for the college
+                    var webPath = json.results[i].school.school_url;
+                    var websitePath = document.createElement("a");
+                    websitePath.setAttribute("id", "web");
+                    websitePath.setAttribute('class', "font")
+                    websitePath.setAttribute('href', `https://${webPath}`);
+                    websitePath.innerHTML = webPath;
 
-                //Carousel
+                    // list (ul)
+                    var list = document.createElement("ul");
+                    list.setAttribute("id", "resultList");
+                    // items (li)
+                    var items = document.createElement("li");
+                    items.setAttribute("class", "resultLi font");
 
-                // var carousel = document.createElement("div");
-                // carousel.setAttribute("class", "container carousel");
-                // carousel.appendChild(resultCard);
+                    //Carousel
 
-                // carousel.setAttribute("id", "carouselthing");
-                // var carousel2 = document.createElement("div");
-                // carousel2.setAttribute("class", "carousel slide");
-                // carousel2.setAttribute("id", "myCarousel");
-                // carousel2.setAttribute("data-ride", "carousel");
-                // carousel2.appendChild(carousel);
+                    var carousel = document.createElement("div");
+                    carousel.setAttribute("class", "container carousel");
 
-                // var ol = document.createElement("ol");
-                // ol.setAttribute("class", "carousel-indicators");
-                // ol.appendChild(carousel2);
+                    carousel.setAttribute("id", "carouselthing");
+                    var carousel2 = document.createElement("div");
+                    carousel2.setAttribute("class", "carousel slide");
+                    carousel2.setAttribute("id", "myCarousel");
+                    carousel2.setAttribute("data-ride", "carousel");
+                    carousel.appendChild(carousel2);
 
-                // var dot1 = document.createElement("li");
-                // dot1.setAttribute("data-target", "#myCarousel");
-                // dot1.setAttribute("data-slide-to", "0");
-                // dot1.setAttribute("class", "active");
-                // dot1.appendChild(ol);
+                    var ol = document.createElement("ol");
+                    ol.setAttribute("class", "carousel-indicators");
+                    carousel2.appendChild(ol);
 
-                // var dot2 = document.createElement("li");
-                // dot2.setAttribute("data-target", "#myCarousel");
-                // dot2.setAttribute("data-slide-to", "1");
-                // dot2.appendChild(ol);
+                    var dot1 = document.createElement("li");
+                    dot1.setAttribute("data-target", "#myCarousel");
+                    dot1.setAttribute("data-slide-to", "0");
+                    dot1.setAttribute("class", "active");
+                    ol.appendChild(dot1);
 
-                // var dot3 = document.createElement("li");
-                // dot3.setAttribute("data-target", "#myCarousel");
-                // dot3.setAttribute("data-slide-to", "2");
-                // dot3.appendChild(ol);
+                    var dot2 = document.createElement("li");
+                    dot2.setAttribute("data-target", "#myCarousel");
+                    dot2.setAttribute("data-slide-to", "1");
+                    ol.appendChild(dot2);
 
-                // var carouselinner = document.createElement("div");
-                // carouselinner.setAttribute("class", "carousel-inner");
-                // carouselinner.appendChild(carousel2);
+                    var dot3 = document.createElement("li");
+                    dot3.setAttribute("data-target", "#myCarousel");
+                    dot3.setAttribute("data-slide-to", "2");
+                    ol.appendChild(dot3);
 
-                // var img1 = document.createElement("div");
-                // img1.setAttribute("class", "item active");
-                // img1.appendChild(carouselinner);
-                // var img11 = document.createElement("img");
-                // img11.setAttribute("src", "https://assets3.thrillist.com/v1/image/2561558/size/tmg-slideshow_l.jpg");
-                // img11.setAttribute("alt", "First Image");
-                // img11.setAttribute("style", "width:100%");
-                // img11.appendChild(img1);
+                    var carouselinner = document.createElement("div");
+                    carouselinner.setAttribute("class", "carousel-inner");
+                    carousel2.appendChild(carouselinner);
 
-                // var img2 = document.createElement("div");
-                // img2.setAttribute("class", "item");
-                // img2.appendChild(carouselinner);
-                // var img22 = document.createElement("img");
-                // img22.setAttribute("src", "https://assets3.thrillist.com/v1/image/2561558/size/tmg-slideshow_l.jpg");
-                // img22.setAttribute("alt", "Second Image");
-                // img22.setAttribute("style", "width:100%");
-                // img22.appendChild(img2);
+                    var img1 = document.createElement("div");
+                    img1.setAttribute("class", "item active");
+                    carouselinner.appendChild(img1);
 
-                // var img3 = document.createElement("div");
-                // img3.setAttribute("class", "item");
-                // img3.appendChild(carouselinner);
-                // var img33 = document.createElement("img");
-                // img33.setAttribute("src", "https://assets3.thrillist.com/v1/image/2561558/size/tmg-slideshow_l.jpg");
-                // img33.setAttribute("alt", "First Image");
-                // img33.setAttribute("style", "width:100%");
-                // img33.appendChild(img3);
+                    var img11 = document.createElement("img");
+                    img11.setAttribute("src", "kwklogozoom.png");
+                    img11.setAttribute("alt", "First Image");
+                    img11.setAttribute("style", "width:100%");
+                    img1.appendChild(img11);
 
-                // var leftcontrol = document.createElement("a");
-                // leftcontrol.setAttribute("class", "left carousel-control");
-                // leftcontrol.setAttribute("href", "#myCarousel");
-                // leftcontrol.setAttribute("data-slide", "prev");
-                // leftcontrol.appendChild(carousel2);
-                // var leftarrow = document.createElement("span");
-                // leftarrow.setAttribute("class", "glyphicon glyphicon-chevron-left");
-                // leftarrow.appendChild(leftcontrol);
-                // var leftprevious = document.createElement("span");
-                // leftprevious.setAttribute("class", "sr-only");
-                // leftprevious.appendChild(leftcontrol);
+                    var img2 = document.createElement("div");
+                    img2.setAttribute("class", "item");
+                    carouselinner.appendChild(img2);
 
-                // var rightcontrol = document.createElement("a");
-                // rightcontrol.setAttribute("class", "right carousel-control");
-                // rightcontrol.setAttribute("href", "#myCarousel");
-                // rightcontrol.setAttribute("data-slide", "next");
-                // rightcontrol.appendChild(carousel2);
-                // var rightarrow = document.createElement("span");
-                // rightarrow.setAttribute("class", "glyphicon glyphicon-chevron-right");
-                // rightarrow.appendChild(rightcontrol);
-                // var rightnext = document.createElement("span");
-                // rightnext.setAttribute("sr-only");
-                // rightnext.appendChild(rightcontrol);
+                    var img22 = document.createElement("img");
+                    img22.setAttribute("src", "https://kodewithklossydotcom.files.wordpress.com/2016/08/kwk-hero-image.jpg");
+                    img22.setAttribute("alt", "Second Image");
+                    img22.setAttribute("style", "width:100%");
+                    img2.appendChild(img22);
 
+                    var img3 = document.createElement("div");
+                    img3.setAttribute("class", "item");
+                    carouselinner.appendChild(img3);
+                    var img33 = document.createElement("img");
+                    img33.setAttribute("src", "karlie2zoom.jpg");
+                    img33.setAttribute("alt", "First Image");
+                    img33.setAttribute("style", "width:100%");
+                    img3.appendChild(img33);
 
+                    var leftcontrol = document.createElement("a");
+                    leftcontrol.setAttribute("class", "left carousel-control");
+                    leftcontrol.setAttribute("href", "#myCarousel");
+                    leftcontrol.setAttribute("data-slide", "prev");
+                    carousel2.appendChild(leftcontrol);
+                    var leftarrow = document.createElement("span");
+                    leftarrow.setAttribute("class", "glyphicon glyphicon-chevron-left");
+                    leftcontrol.appendChild(leftarrow);
+                    var leftprevious = document.createElement("span");
+                    leftprevious.setAttribute("class", "sr-only");
+                    leftcontrol.appendChild(leftprevious);
 
-                //end Carousel
+                    var rightcontrol = document.createElement("a");
+                    rightcontrol.setAttribute("class", "right carousel-control");
+                    rightcontrol.setAttribute("href", "#myCarousel");
+                    rightcontrol.setAttribute("data-slide", "next");
+                    carousel2.appendChild(rightcontrol);
+                    var rightarrow = document.createElement("span");
+                    rightarrow.setAttribute("class", "glyphicon glyphicon-chevron-right");
+                    rightcontrol.appendChild(rightarrow);
+                    var rightnext = document.createElement("span");
+                    rightnext.setAttribute("class", "sr-only");
+                    rightcontrol.appendChild(rightnext);
 
-                var mapDiv = document.createElement("div");
-                mapDiv.setAttribute('id', "map" + i);
-                mapDiv.setAttribute("class", "thumbnail grow map");
+                    //end Carousel
 
-                document.body.appendChild(resultCard);
-                resultCard.appendChild(panelBody);
-                panelBody.appendChild(nameOfSchool);
-                panelBody.appendChild(schoolLocation);
-                panelBody.appendChild(list);
-                list.appendChild(websitePath);
-                list.appendChild(items);
-                resultCard.appendChild(mapDiv);
-                initMap();
+                    var mapDiv = document.createElement("div");
+                    mapDiv.setAttribute('id', "map" + i);
+                    mapDiv.setAttribute("class", "thumbnail grow map");
 
-                var schoolName = document.getElementById("schoolName");
-                schoolName.innerHTML = namePath;
-                schoolName.setAttribute("class", "glow font");
-                document.getElementById("myForm").reset();
+                    document.body.appendChild(resultCard);
+                    resultCard.appendChild(panelBody);
+                    panelBody.appendChild(nameOfSchool);
+                    panelBody.appendChild(schoolLocation);
+                    panelBody.appendChild(list);
+                    list.appendChild(websitePath);
+                    list.appendChild(items);
+                    resultCard.appendChild(mapDiv);
+                    resultCard.appendChild(carousel);
 
-                /////////////////////////  FILTERS  ////////////////////////////////////
+                    initMap();
 
-                var programs = json.results[i][2014].academics.program_percentage;
-                // Turn object into an array
-                var programsArray = Object.entries(programs);
+                    var schoolName = document.getElementById("schoolName");
+                    schoolName.innerHTML = namePath;
+                    schoolName.setAttribute("class", "glow font");
+                    document.getElementById("myForm").reset();
 
-                // Sort the array by the object value
-                var sorted = programsArray.sort(function(prev, curr) {
-                    return curr[1] - prev[1];
-                });
-                
-                var programList = document.createTextNode(sorted[0]);
-                console.log(programList);
-                items.appendChild(programList);
+                    /////////////////////////  FILTERS  ////////////////////////////////////
+
+                    var programs = json.results[i][2014].academics.program_percentage;
+                    // Turn object into an array
+                    var programsArray = Object.entries(programs);
+                    // Sort the array by the object value
+                    var sorted = programsArray.sort(function(prev, curr) {
+                        return curr[1] - prev[1];
+                    });
+                    var resultsToString = sorted[0].toString();
+                    resultsToString = resultsToString.replace("_", " ");
+                    resultsToString = capitalize(resultsToString);
+                    var strSplit = resultsToString.split(",");
+                    console.log(strSplit)
+                    var programList = document.createTextNode(resultsToString);
+
+                    if (strSplit[1] == 0) {
+                        programList = document.createTextNode("No Data is Available");
+                        items.innerHTML = programList
+                    }
+
+                    if (strSplit[1] == 1) {
+                        strSplit[1] = "100%";
+                        var strCool = document.createTextNode(strSplit[0] + " - " + strSplit[1]);
+                        strCool.toString();
+                        items.appendChild(strCool)
+                    }
+                    else if (strSplit[1] < 1){
+                        strSplit[1] = strSplit[1] * 100;
+                        strSplit.toString();
+                        var percentage = strSplit[0] + " - " + strSplit[1] + "%";
+                        // console.log(percentage)
+                        items.innerHTML = percentage;
+                    }
+
+                else {
+                    items.appendChild(programList);
+                }
                 list.appendChild(items);
                 document.getElementById(list);
-                
+
                 // Iterate through array to get top 5 majors
-                // for (var i = 0; i < 1; i++) {
+                // 
                 //     console.log(`#${i+1} major:`, sorted[i])
                 // }
-                
-                // if (programList != programList){
-                //     resultCard.style.display = "none";
-                // }
+
 
                 ///////////////////////  END FILTERS  ///////////////////////////////////
 
             }
         })
 
-        .catch(
-            err => {
-                console.log(err);
-            });
+.catch(
+    err => {
+        console.log(err);
+    });
 }
 
 
@@ -239,4 +261,12 @@ function initMap() {
                 console.log(err);
             });
 
+}
+
+function capitalize(str) {
+    var split = str.split(' ')
+    for (var i = 0; i < split.length; i++) {
+        split[i] = split[i].charAt(0).toUpperCase() + split[i].slice(1);
+    }
+    return split.join(" ")
 }

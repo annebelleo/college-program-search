@@ -90,18 +90,15 @@ body {
     background-size:20%;
 }
 
-#map {
-    top: 10px;
-    left: 50%;
-    height: 400px;
-    width: 50%;
-}
+
 
 .map {
+    margin-top: -10%;
     top: 10px;
     left: 50%;
-    height: 400px;
+    height: 500px;
     width: 50%;
+    margin-bottom: 1%
 }
 
 .glow {
@@ -163,10 +160,14 @@ h3 {
     left: 45% !important;
 
 }
-
-#carouselthing {
-    position: absolute;
-    max-height: 10%;
-    max-width: 10%;
-    top: 50% !important;
+.carousel{
+    margin-top:-22%;
+    margin-bottom: 1%;
+    min-height:70%;
+    min-width:70%;
+    max-height: 70%;
+    max-width: 70%;
+   left:-10%;
 }
+
+
