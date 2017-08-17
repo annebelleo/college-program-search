@@ -18,37 +18,46 @@
 </head>
 
 <body>
+
     <header class="container-fluid" id="page-header">
         <div>
             <h1 align="center" id="header" class="text-center header font">College ZOOM</h1>
         </div>
     </header>
-    <div id="searchbar" class="col-sm-4 col-sm-offset-4">
-        <form class="navbar-form" id="myForm" role="search">
-            <div class="form-group">
-                <input id="input" type="text" class="form-control font " placeholder="Enter City/Town">
-            </div>
-        </form>
+
+    <div class="col-md-4"></div>
+
+    <div id="searchbar" class="col-md-4">
+
+        <div class="search">
+            <form class="navbar-form" id="myForm" role="search">
+                <div class="form-group">
+                    <input id="input" type="text" class="form-control font" placeholder="Enter City/Town">
+                </div>
+            </form>
+        </div>
+
+        <div class="dropdown font">
+            <button class="filterbtn" id="dLabel" type="button" data-toggle="dropdown" aria-expanded="false">Filter<span class="caret"></span></button>
+        </div>
+
+        <ul class="dropdown-menu font" aria-labelledby="dLabel">
+            <li><input id="arts" type="checkbox" name="vehicle" value="Arts">Arts and Humanities</li>
+            <li><input id="business" type="checkbox" name="vehicle" value="Business">Business</li>
+            <li><input id="health" type="checkbox" name="vehicle" value="Health">Health and Medicine</li>
+            <li><input id="multi" type="checkbox" name="vehicle" value="Multi">Multi-/Interdisciplinary</li>
+            <li><input id="socialservices" type="checkbox" name="vehicle" value="SocialServices">Public and Social Services</li>
+            <li><input id="stem" type="checkbox" name="vehicle" value="STEM">STEM</li>
+            <li><input id="socialsciences" type="checkbox" name="vehicle" value="SocialSciences">Social Sciences</li>
+            <li><input id="trades" type="checkbox" name="vehicle" value="Trades">Trades and Personal Services</li>
+        </ul>
 
         <button type="submit" onclick="college()" id="searchbutton" class="btn font">Find Schools</button>
-        <div class="dropdown font">
-            <button class="filterbtn" id="dLabel" type="button" data-toggle="dropdown" aria-expanded="false">Filter<span class="caret"></span>
-           </button>
-            <ul class="dropdown-menu font" aria-labelledby="dLabel">
-                <li><input id="arts" type="checkbox" name="vehicle" value="Arts">Arts and Humanities</li>
-                <li><input id="business" type="checkbox" name="vehicle" value="Business">Business</li>
-                <li><input id="health" type="checkbox" name="vehicle" value="Health">Health and Medicine</li>
-                <li><input id="multi" type="checkbox" name="vehicle" value="Multi">Multi-/Interdisciplinary</li>
-                <li><input id="socialservices" type="checkbox" name="vehicle" value="SocialServices">Public and Social Services</li>
-                <li><input id="stem" type="checkbox" name="vehicle" value="STEM">STEM</li>
-                <li><input id="socialsciences" type="checkbox" name="vehicle" value="SocialSciences">Social Sciences</li>
-                <li><input id="trades" type="checkbox" name="vehicle" value="Trades">Trades and Personal Services</li>
-            </ul>
-        </div>
+
     </div>
 
+    <div class="col-md-4"></div>
 
 </body>
 
 </html>
-

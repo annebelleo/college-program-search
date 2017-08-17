@@ -8,19 +8,17 @@ body {
 }
 
 #page-header {
-    max-height: 15%;
-    color: white;
+    background: url("https://www.frommers.com/system/header_images/images/000/000/005/original/Chicago_Skyline_at_night_by_Flickr_a4gpa.jpg?1386175956") no-repeat center;
     border-bottom: dashed black;
-    background-image: url("https://www.frommers.com/system/header_images/images/000/000/005/original/Chicago_Skyline_at_night_by_Flickr_a4gpa.jpg?1386175956");
-    background-repeat: no-repeat;
-    background-position: center;
+    color: white;
+    max-height: 15%;
 }
 
 #header {
     font-weight: bold;
-    text-shadow: 2px 2px 4px #000000;
-    padding: 1%;
     overflow: hidden;
+    padding: 1%;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 #header:before {
@@ -29,11 +27,9 @@ body {
     position: absolute;
     left: -10%;
     transition: all 200ms ease;
-
 }
 
 #header:hover:before {
-
     left: 30%;
 }
 
@@ -46,38 +42,44 @@ body {
 }
 
 .header:hover:before {
-    font-family: FontAwesome;
     content: "\f1ba";
+    font-family: FontAwesome;
     position: absolute;
     right: -10%;
     transition: all 200ms ease;
 }
 
-
+.form-group {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+}
 
 #searchbar {
-    position: absolute;
-    top: 11%;
-    padding-top: 1%;
     border-bottom: dashed black;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    position: relative;
+}
 
+.search {
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
 }
 
 #searchbutton {
+    float: right;
     font-size: 15px;
-    position: absolute;
-    top: 30%;
-    left: 70%;
-    padding: 1%;
+    position: relative;
     background-color: black;
     color: white;
     border: dashed white;
 }
 
 #searchbutton:hover {
-    position: absolute;
-    top: 30%;
-    left: 70%;
+    position: relative;
     background-color: white;
     color: black;
     border: dashed black;
@@ -90,9 +92,6 @@ body {
     background-size:20%;
 }
 
-
-
-
 #map {
     top: 10px;
     left: 50%;
@@ -100,7 +99,6 @@ body {
     width: 50%;
     margin-top:-10%;
 }
-
 
 .map {
     margin-top: -10%;
@@ -140,22 +138,21 @@ h3 {
     
 }
 
-
-
+.dropdown {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+}
 
 .filterbtn {
-    border-radius: 5%;
-    position: absolute;
-    margin-top: -9% !important;
-    margin-left: 2%;
-    left: 44%;
     background-color: black;
-    color: white;
     border: dashed white;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    border-radius: 5%;
+    box-sizing: border-box;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+    position: relative;
 }
 
 .filterbtn:hover {
@@ -165,19 +162,17 @@ h3 {
 }
 
 .dropdown-menu {
-    position: absolute;
-    /*margin-top: -8% !important;*/
-    left: 45% !important;
+    position: relative;
+}
 
-}
-.carousel{
-    margin-top:-22%;
-    margin-bottom: 1%;
-    min-height:70%;
-    min-width:70%;
-    max-height: 70%;
-    max-width: 70%;
-   left:-10%;
-}
+/*.carousel{*/
+/*    margin-top:-22%;*/
+/*    margin-bottom: 1%;*/
+/*    min-height:70%;*/
+/*    min-width:70%;*/
+/*    max-height: 70%;*/
+/*    max-width: 70%;*/
+/*    left:-10%;*/
+/*}*/
 
 
